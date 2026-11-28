@@ -1,0 +1,24 @@
+{
+  "name": "craftdeck-launcher",
+  "version": "3.6.1",
+  "private": true,
+  "description": "CraftDeck — 功能完整的《我的世界》启动器（版本/模组/整合包/材质光影/汉化/联机/开服/多账户/自定义背景）",
+  "type": "module",
+  "main": "desktop.mjs",
+  "scripts": {
+    "start": "node server/server.mjs --open",
+    "serve": "node server/server.mjs",
+    "desktop": "electron desktop.mjs",
+    "build:app": "node scripts/build-app.mjs",
+    "test": "node tests/smoke.mjs",
+    "test:ui": "node tests/ui-smoke.mjs",
+    "test:download": "node tests/download-test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "optionalDependencies": {},
+  "devDependencies": {
+    "electron": "^38.0.0"
+  }
+}

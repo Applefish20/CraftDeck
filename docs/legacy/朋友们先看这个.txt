@@ -1,0 +1,50 @@
+CraftDeck 3.6.1 · 朋友测试版
+作者：Applefish
+
+一、怎么运行
+1. 把整个压缩包解压到一个普通文件夹（不要在压缩包预览里直接双击）。
+2. 双击 CraftDeck.exe。
+3. 如果 Windows 弹出「已保护你的电脑」：点「更多信息」→「仍要运行」。
+   这是没有代码签名证书的提示，不是病毒。
+
+二、Java 说明（重要）
+完整版已经内置 Java，不需要另外安装：
+- resources\app\runtime\jre21 —— 用于 1.17 ~ 1.21+ / Fabric / NeoForge
+- resources\app\runtime\jre8  —— 用于 1.12.2 及更老的版本 / Forge
+启动器会自动选择对应 Java。若某版本仍提示找不到 Java，可在「设置 → Java 与内存」手动指定。
+
+三、第一次启动
+- 首次打开会在 %APPDATA%\CraftDeck 创建数据目录（实例、账户、存档、日志都在这里）。
+- 「版本下载」选择版本 → 安装 → 回实例页启动。
+- 账户页支持：微软正版、离线账户、第三方 LittleSkin（authlib-injector）。
+- 皮肤页可上传本地皮肤、按正版 ID 获取，或从 LittleSkin 在线皮肤库下载。
+
+四、建议测试
+1. 下载并启动 1.21.1 原版。
+2. 安装 Fabric + 一个模组（如 Sodium），启动。
+3. 安装一个整合包。
+4. 离线账户 / 微软正版 / LittleSkin 登录。
+5. 皮肤上传、在线皮肤库下载、应用。
+6. 实例「内容」：版本设置、Mod 管理、光影、账户、导出启动脚本。
+7. 陶瓦联机 / 开服中心（可选）。
+
+五、反馈问题请附上
+- 版本号、操作步骤、截图；
+- 日志：启动器左侧「日志」页，或
+  %APPDATA%\CraftDeck\logs\launcher.log
+  %APPDATA%\CraftDeck\logs\desktop.log
+- 你的 Windows 版本。
+
+六、目录说明
+CraftDeck.exe                 启动器
+resources\app\web             界面
+resources\app\server          本地服务与下载逻辑
+resources\app\runtime         内置 Java
+运行说明.txt                   详细使用说明
+JAVA_NOTICE.txt               内置 Java 许可说明
+README.md                     完整功能说明
+
+七、注意
+- 这是测试版，请勿用于商业分发。
+- 微软正版登录需要真实拥有 Minecraft Java 版的微软账户。
+- 离线账户只能进离线服 / 单机；第三方账户请使用对应皮肤站服务器。

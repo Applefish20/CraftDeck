@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob: https:; media-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self' data:" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>CraftDeck · 我的世界启动器</title>
+  <link rel="icon" type="image/png" href="/assets/icon.png" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/pages.css" />
+  <script src="/vendor/skinview3d.bundle.js"></script>
+<script type="module" src="/js/app.js"></script>
+</head>
+<body>
+  <div id="bg-layer" class="bg-layer" aria-hidden="true">
+    <div id="bg-image" class="bg-image"></div>
+    <div id="bg-dim" class="bg-dim"></div>
+  </div>
+
+  <div class="app" id="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand" id="brand">
+        <div class="brand-mark">
+          <img class="brand-img" src="/assets/icon.png" alt="CraftDeck" />
+        </div>
+        <div class="brand-text">
+          <strong>CraftDeck</strong>
+          <span>MC 启动器</span>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <div class="nav-group">
+          <div class="nav-label">游戏</div>
+          <a class="nav-item" data-page="instances" href="#/instances"><span class="ni" data-icon="play"></span><span>启动</span></a>
+          <a class="nav-item" data-page="downloads" href="#/downloads"><span class="ni" data-icon="download"></span><span>下载</span></a>
+          <a class="nav-item" data-page="migrate" href="#/migrate"><span class="ni" data-icon="migrate"></span><span>迁移导入</span></a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">联机</div>
+          <a class="nav-item" data-page="servers" href="#/servers"><span class="ni" data-icon="servers"></span><span>服务器列表</span></a>
+          <a class="nav-item" data-page="terracotta" href="#/terracotta"><span class="ni" data-icon="terracotta"></span><span>联机</span></a>
+          <a class="nav-item" data-page="hosts" href="#/hosts"><span class="ni" data-icon="hosts"></span><span>开服中心</span></a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">系统</div>
+          <a class="nav-item" data-page="accounts" href="#/accounts"><span class="ni" data-icon="account"></span><span>账户</span></a>
+          <a class="nav-item" data-page="skins" href="#/skins"><span class="ni" data-icon="skin"></span><span>皮肤</span></a>
+          <a class="nav-item" data-page="logs" href="#/logs"><span class="ni" data-icon="logs"></span><span>日志</span></a>
+          <a class="nav-item" data-page="toolbox" href="#/toolbox"><span class="ni" data-icon="toolbox"></span><span>百宝箱</span></a>
+          <a class="nav-item" data-page="settings" href="#/settings"><span class="ni" data-icon="settings"></span><span>设置</span></a>
+        </div>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="task-mini" id="task-mini" hidden>
+          <div class="task-mini-head"><span id="task-mini-label">安装中…</span><span class="task-mini-right"><span id="task-mini-pct">0%</span><button class="task-pause" id="task-mini-pause" title="取消下载" hidden><span data-icon="close" data-icon-size="12"></span></button></span></div>
+          <div class="progress slim"><i id="task-mini-bar"></i></div>
+        </div>
+        <div class="version-tag sidebar-version">v3.6.1 · 作者 Applefish</div>
+        <div class="version-tag floating-version" aria-hidden="true">v3.6.1 · 作者 Applefish</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn" id="btn-back" title="返回" hidden><span data-icon="back" data-icon-size="17"></span></button>
+          <h1 id="page-title">实例</h1>
+          <span class="muted" id="page-sub"></span>
+        </div>
+        <div class="topbar-right">
+          <button class="account-chip" id="account-chip" title="切换账户">
+            <span class="avatar" id="account-avatar">?</span>
+            <span class="account-name" id="account-name">未登录</span>
+            <span class="chev" data-icon="chevron" data-icon-size="13"></span>
+          </button>
+          <button class="icon-btn" id="btn-console" title="控制台 (Ctrl+`)"><span data-icon="console" data-icon-size="17"></span></button>
+          <div class="window-controls" id="window-controls" hidden>
+            <button class="win-btn" id="win-min" title="最小化"><span data-icon="minimize" data-icon-size="14"></span></button>
+            <button class="win-btn" id="win-max" title="最大化 / 还原"><span data-icon="maximize" data-icon-size="13"></span></button>
+            <button class="win-btn close" id="win-close" title="关闭"><span data-icon="close" data-icon-size="14"></span></button>
+          </div>
+        </div>
+      </header>
+
+      <section class="viewport" id="view"></section>
+    </main>
+  </div>
+
+  <div class="console-panel" id="console-panel" hidden>
+    <div class="console-head">
+      <div class="console-tabs" id="console-tabs"></div>
+      <div class="console-actions">
+        <button class="icon-btn" id="console-clear" title="清空">清空</button>
+        <button class="icon-btn" id="console-close" title="关闭"><span data-icon="close" data-icon-size="14"></span></button>
+      </div>
+    </div>
+    <pre class="console-body" id="console-body"></pre>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root"></div>
+  <div id="account-menu" class="popover" hidden></div>
+  <div id="boot" class="boot">
+    <div class="boot-inner">
+      <div class="boot-logo">CraftDeck</div>
+      <div class="boot-sub">正在连接本地启动核心…</div>
+      <div class="spinner"></div>
+    </div>
+  </div>
+</body>
+</html>

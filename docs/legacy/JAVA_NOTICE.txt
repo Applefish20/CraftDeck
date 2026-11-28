@@ -1,0 +1,19 @@
+CraftDeck 完整版内置 Java 说明
+================================
+
+本完整版为方便朋友测试，内置了以下 OpenJDK 运行时：
+
+1. Amazon Corretto 8 (JRE)
+   路径：resources\app\runtime\jre8
+   用途：Minecraft 1.12.2 及更老版本、部分 Forge 版本。
+
+2. Amazon Corretto 21 (JDK，已裁剪为运行时)
+   路径：resources\app\runtime\jre21
+   用途：Minecraft 1.17 ~ 1.21+、Fabric、NeoForge。
+
+两者均为 OpenJDK 构建，遵循 GPLv2 + Classpath Exception。
+来源：https://aws.amazon.com/corretto/
+许可证文件保留在各 runtime 目录的 legal/ 与 LICENSE 文件中。
+
+启动器会优先使用随包的 Java，其次使用系统已安装的 Java。
+如果不需要内置 Java，可以删除 resources\app\runtime 目录，启动器会改为自动检测系统 Java。

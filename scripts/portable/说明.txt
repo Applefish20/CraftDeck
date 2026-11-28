@@ -1,0 +1,11 @@
+﻿CraftDeck 便携版
+
+目录说明：
+- CraftDeck：启动器本体，双击里面的 CraftDeck.exe
+- Minecraft：游戏实例、版本、存档、资源、账户和设置
+
+建议：
+1. 如果这是从浏览器下载的 ZIP，先右键 ZIP → 属性 → 勾选“解除锁定”，再解压。
+2. 已经解压的话，运行一次「解除文件锁定.bat」。
+3. 需要桌面图标时，运行「创建快捷方式.bat」，或把 CraftDeck\CraftDeck.exe 发送到桌面快捷方式。
+4. 移动整个文件夹即可迁移，不要把 CraftDeck 和 Minecraft 分开。
